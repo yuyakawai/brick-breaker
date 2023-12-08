@@ -8,7 +8,7 @@ let y = canvas.height - 30;
 let ballRadius = 8;
 
 // ボールの動き
-let dx = (Math.random() - 0.5) * 10;
+let dx = -2;
 let dy = -2;
 
 // パドルの高さ、幅、位置
@@ -168,7 +168,8 @@ const draw = () => {
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
-    } else {
+    } else if (y + dy > canvas.height + ballRadius) {
+      // ボールが完全に画面外に出たらゲームオーバー
       document.getElementById("gameMessage").innerText = "GAME OVER";
       clearInterval(interval); // Needed for Chrome to end game
     }
