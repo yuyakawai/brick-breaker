@@ -1,6 +1,6 @@
 # プロジェクト名
 
-block-breaker
+brick-breaker
 
 ## 概要
 
